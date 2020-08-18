@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
- users テーブル
+  consumers テーブル
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
@@ -34,20 +34,20 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :addres 
-- has_many :items
+- has_many :products
 
- items テーブル
+ products テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| prouct | string | null: false |
+| product | string | null: false |
 | image  | text   | null: false |
 | category | string |           |
 | price  | integer| null: false |
 | exhibitor | text |            |
 ### Association
 
-- belongs_to :user  
+- belongs_to :consumer
 - has_many :buys
 
  buys テーブル
@@ -59,7 +59,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :addres
-- has_many :items
+- has_many :products
 
 
 
@@ -71,4 +71,4 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :buy
-- belongs_to :item
+- belongs_to :product
