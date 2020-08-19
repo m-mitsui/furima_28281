@@ -31,7 +31,7 @@
 | status |  integer |  null: false   |
 | delivery fee | integer | null: false |
 | delivery time | integer | null: false |
-| ship-from | string  | null: false |
+| ship-from | integer  | null: false |
 | consumers_id  | integer | null: false   foreign_key: true |
 
 ### Association
@@ -56,12 +56,12 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-|  postal code | integer     | null:  false                   |
+|  postal code | string  |                 |
 |  prefecture | integer | null: false |
 | city  | string  | null: false |
 | house number | string  | null: false |
-| building  | string  | null: false |
-| phone-number  | integer | null: false |
+| building  | string  |  |
+| phone-number  | string | null: false |
 | buys_id | integer | null: false   foreign_key: true |
 
 
