@@ -4,9 +4,15 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| name     | string | null: false |
+| nickname     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
+| password-confirmation | string  | null: false |
+| first-name  | string  | null: false |
+| last-name | string  | null: false |
+| first-name-kana  |  string  | null: false |
+| last-name-kana  | string  | null: false |
+| birthday  | date  | null: false |
 
 ### Association
 
@@ -26,6 +32,7 @@
 | delivery fee | integer | null: false |
 | delivery time | integer | null: false |
 | ship-from | string  | null: false |
+| consumers_id  | integer | null: false   foreign_key: true |
 
 ### Association
 
@@ -36,7 +43,7 @@
 
  | Column   | Type       | Options                        |
  | ------   | ---------- | -------------------------------|
- | user_id | integer    | null: false,  foreign_key: true |
+ | consumers_id | integer    | null: false,  foreign_key: true |
  | products_id | integer    | null: false,  foreign_key: true |
 ### Association
 
@@ -50,11 +57,12 @@
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
 |  postal code | integer     | null:  false                   |
-|  prefecture | string | null: false |
+|  prefecture | integer | null: false |
 | city  | string  | null: false |
 | house number | string  | null: false |
 | building  | string  | null: false |
 | phone-number  | integer | null: false |
+| buys_id | integer | null: false   foreign_key: true |
 
 
 ### Association
