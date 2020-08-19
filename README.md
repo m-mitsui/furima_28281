@@ -24,7 +24,7 @@
 | exhibitor | text |            |
 | status |  string |            |
 | delivery fee | integer | null: false |
-| deliverry time | integer | null: false |
+| delivery time | integer | null: false |
 
 ### Association
 
