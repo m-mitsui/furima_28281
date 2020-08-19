@@ -1,65 +1,59 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
- users テーブル
+  consumers テーブル
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| name     | string | null: false |
+| nickname     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
+| password-confirmation | string  | null: false |
+| first-name  | string  | null: false |
+| last-name | string  | null: false |
+| first-name-kana  |  string  | null: false |
+| last-name-kana  | string  | null: false |
+| birthday  | date  | null: false |
 
 ### Association
 
-- belongs_to :addres 
-- has_many :items
+- has_many :buys
+- has_many :products
 
- items テーブル
+ products テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| prouct | string | null: false |
+| name   | string | null: false |
 | image  | text   | null: false |
-| category | string |           |
+| category | integer |   null: false   |
 | price  | integer| null: false |
-| exhibitor | text |            |
+| exhibitor | integer | null: false |
+| status |  integer |  null: false   |
+| delivery fee | integer | null: false |
+| delivery time | integer | null: false |
+| ship-from | integer  | null: false |
+| consumer_id  | integer | null: false   foreign_key: true |
+
 ### Association
 
-- belongs_to :user  
-- has_many :buys
+- belongs_to :consumer
+- has_one :buy
 
  buys テーブル
 
  | Column   | Type       | Options                        |
  | ------   | ---------- | -------------------------------|
- | price_id | integer    | null: false,  foreign_key: true |
- | items_id | integer    | null: false,  foreign_key: true |
+ | consumer_id | integer    | null: false,  foreign_key: true |
+ | product_id | integer    | null: false,  foreign_key: true |
+ |
 ### Association
 
-- belongs_to :addres
-- has_many :items
+- has_one :address
+  belongs_to :consumer
+- belongs_to :product
+
+
+
 
 
 
@@ -67,8 +61,15 @@ Things you may want to cover:
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-|  addres | string     | null:  false                   |
+|  postal code | string  |                 |
+|  prefecture | integer | null: false |
+| city  | string  | null: false |
+| house number | string  | null: false |
+| building  | string  |  |
+| phone-number  | string | null: false |
+| buy_id | integer | null: false   foreign_key: true |
+
+
 ### Association
 
 - belongs_to :buy
-- belongs_to :item
