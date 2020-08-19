@@ -16,7 +16,7 @@
 
 ### Association
 
-- belongs_to :buy 
+- has_many :buys
 - has_many :products
 
  products テーブル
@@ -32,23 +32,28 @@
 | delivery fee | integer | null: false |
 | delivery time | integer | null: false |
 | ship-from | integer  | null: false |
-| consumers_id  | integer | null: false   foreign_key: true |
+| consumer_id  | integer | null: false   foreign_key: true |
 
 ### Association
 
 - belongs_to :consumer
-- has_many :buys
+- has_one :buy
 
  buys テーブル
 
  | Column   | Type       | Options                        |
  | ------   | ---------- | -------------------------------|
- | consumers_id | integer    | null: false,  foreign_key: true |
- | products_id | integer    | null: false,  foreign_key: true |
+ | consumer_id | integer    | null: false,  foreign_key: true |
+ | product_id | integer    | null: false,  foreign_key: true |
+ |
 ### Association
 
-- belongs_to :addres
-- has_many :products
+- belongs_to :address
+  belongs_to :consumer
+- belongs_to :product
+
+
+
 
 
 
@@ -62,7 +67,7 @@
 | house number | string  | null: false |
 | building  | string  |  |
 | phone-number  | string | null: false |
-| buys_id | integer | null: false   foreign_key: true |
+| buy_id | integer | null: false   foreign_key: true |
 
 
 ### Association
