@@ -48,7 +48,7 @@
  |
 ### Association
 
-- belongs_to :address
+- has_one :address
   belongs_to :consumer
 - belongs_to :product
 
