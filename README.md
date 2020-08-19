@@ -19,12 +19,13 @@
 | ------ | ------ | ----------- |
 | name   | string | null: false |
 | image  | text   | null: false |
-| category | string |           |
+| category | integer |   null: false   |
 | price  | integer| null: false |
-| exhibitor | text |            |
-| status |  string |            |
+| exhibitor | integer | null: false |
+| status |  integer |  null: false   |
 | delivery fee | integer | null: false |
 | delivery time | integer | null: false |
+| ship-from | string  | null: false |
 
 ### Association
 
@@ -48,7 +49,14 @@
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
-|  addres | string     | null:  false                   |
+|  postal code | integer     | null:  false                   |
+|  prefecture | string | null: false |
+| city  | string  | null: false |
+| house number | string  | null: false |
+| building  | string  | null: false |
+| phone-number  | integer | null: false |
+
+
 ### Association
 
 - belongs_to :buy
