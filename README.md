@@ -1,28 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
   consumers テーブル
 
 | Column   | Type   | Options     |
@@ -33,18 +10,22 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :addres 
+- belongs_to :buy 
 - has_many :products
 
  products テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| product | string | null: false |
+| name   | string | null: false |
 | image  | text   | null: false |
 | category | string |           |
 | price  | integer| null: false |
 | exhibitor | text |            |
+| status |  string |            |
+| delivery fee | integer | null: false |
+| deliverry time | integer | null: false |
+
 ### Association
 
 - belongs_to :consumer
@@ -54,8 +35,8 @@ Things you may want to cover:
 
  | Column   | Type       | Options                        |
  | ------   | ---------- | -------------------------------|
- | price_id | integer    | null: false,  foreign_key: true |
- | items_id | integer    | null: false,  foreign_key: true |
+ | user_id | integer    | null: false,  foreign_key: true |
+ | products_id | integer    | null: false,  foreign_key: true |
 ### Association
 
 - belongs_to :addres
@@ -71,4 +52,3 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :buy
-- belongs_to :product
