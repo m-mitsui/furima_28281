@@ -5,4 +5,11 @@ class Consumer < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates :nickname, presence: true
+  validates :email, presence: true 
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :first_name_kana, presence: true
+  validates :last_name_kana, presence: true
+  validates :birthday, numericality: true
 end
