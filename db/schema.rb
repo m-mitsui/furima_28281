@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_090304) do
+ActiveRecord::Schema.define(version: 2020_08_20_012217) do
 
   create_table "consumers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -29,6 +29,21 @@ ActiveRecord::Schema.define(version: 2020_08_19_090304) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_consumers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_consumers_on_reset_password_token", unique: true
+  end
+
+  create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "image", null: false
+    t.integer "category", null: false
+    t.integer "price", null: false
+    t.integer "exhibitor", null: false
+    t.integer "status", null: false
+    t.integer "delivery_fee", null: false
+    t.integer "delivery_time", null: false
+    t.integer "ship_from", null: false
+    t.integer "consumer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
