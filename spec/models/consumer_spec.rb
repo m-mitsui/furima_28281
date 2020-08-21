@@ -14,11 +14,22 @@ RSpec.describe Consumer, type: :model do
         end
 
         it "passwordが6文字以上であれば登録できる" do
-          @consumer.password = "aaaaaaaa"
-          @consumer.password_confirmation = "aaaaaaaa"
+          @consumer.password = "abc123"
+          @consumer.password_confirmation = "abc123"
           expect(@consumer).to be_valid
         end
 
+        it  "emailは半角英数と@を含んでいれば登録できる" do
+          @consumer.email = "address123@address.com"
+          @consumer.valid?
+          expect(@consumer).to be_valid
+        end
+        
+        it  "パスワードは半角英数混合であれば登録できる" do
+          @consumer.password = "abc123" 
+          @consumer.valid?
+          expect(@consumer).to be_valid
+        end
         
     end
   
@@ -34,7 +45,7 @@ RSpec.describe Consumer, type: :model do
         @consumer.valid?
         expect(@consumer.errors.full_messages).to include("Email can't be blank", "Email can't be blank")
       end
-      
+
       it  "passwordがありpassword_confirmationと一致していないと登録できない" do
         @consumer.password = ""
         @consumer.valid?
@@ -43,7 +54,7 @@ RSpec.describe Consumer, type: :model do
           "Password confirmation doesn't match Password"
           )
       end
-      
+
       it "姓名、氏名がないと登録できない" do
         @consumer.first_name = ""
         @consumer.last_name = ""
