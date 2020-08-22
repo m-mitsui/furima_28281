@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :items, only: [:index, :new, :show, :edit]
+  devise_for :consumers
+  root to: 'products#index'
+  resources :consumers 
+  resources :products, only: [:index, :new, :create]
 end
