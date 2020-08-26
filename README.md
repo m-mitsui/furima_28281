@@ -27,7 +27,7 @@
 | image  | text   | null: false |
 | category | integer |   null: false   |
 | price  | integer| null: false |
-| exhibitor | integer | null: false |
+| explain | text | null: false |
 | status |  integer |  null: false   |
 | delivery fee | integer | null: false |
 | delivery time | integer | null: false |

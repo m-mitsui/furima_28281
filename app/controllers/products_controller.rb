@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   
   def create
     Product.create(product_params) 
+
     if Product.create
       redirect_to action: :index
     else
@@ -22,7 +23,7 @@ class ProductsController < ApplicationController
    private
 
    def product_params
-     params.require(:product).permit(:name, :image, :category, :price, :exhibitor, :status, :delivery_fee, :delivery_time, :ship_from).merge(consumer_id: current_consumer.id)
+     params.require(:product).permit(:name, :image, :category, :price, :explain, :status, :delivery_fee, :delivery_time, :ship_from).merge(consumer_id: current_consumer.id)
    end
 
    def move_to_index
